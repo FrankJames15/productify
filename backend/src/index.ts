@@ -1,5 +1,5 @@
 import express from 'express'
-import { ENV } from './config/env.config.ts'
+import { ENV } from '../env.config.js'
 import { clerkMiddleware } from '@clerk/express';
 import cors from 'cors';
 
