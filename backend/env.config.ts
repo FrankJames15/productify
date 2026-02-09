@@ -7,7 +7,7 @@ export const ENV = {
     NODE_ENV: process.env.NODE_ENV,
     
     // URLS
-    DB_RUL: process.env.DB_RUL,
+    DATABASE_URL: process.env.DATABASE_URL,
     FRONTEND_URL: process.env.FRONTEND_URL,
 
     // KEYS
