@@ -10,9 +10,9 @@ export const users = pgTable("users",
         createAt: timestamp("created_at", { mode: "date" })
             .notNull()
             .defaultNow(),
-        updatedAt: timestamp("updated_at", { mode: "date" })
-            .notNull()
-            .defaultNow()
+        // updatedAt: timestamp("updated_at", { mode: "date" }).notNull().defaultNow()
+        updatedAt: timestamp("updated_at", { mode: "date" }).notNull().defaultNow()
+            .$onUpdate(()=> new Date)
     }
 )
 
