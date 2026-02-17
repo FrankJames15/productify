@@ -1,4 +1,4 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import {} from "@clerk/clerk-react";
 import { Route, Routes } from "react-router";
 
@@ -11,9 +11,14 @@ import ProductPage from "./pages/ProductPage";
 import ProfilePage from "./pages/ProfilePage";
 import CreatePage from "./pages/CreatePage";
 import EditProductPage from "./pages/EditProductPage";
+import useAuthReq from "./hooks/useAuthReq";
+import useUserSync from "./hooks/useUserSync";
 
 export default function App() {
-    const [count, setCount] = useState(0);
+    const { isClerkLoaded, isSignedIn } = useAuthReq();
+    useUserSync();
+
+    if (!isClerkLoaded) return null;
 
     return (
         <div className="min-h-screen bg-base-100">
