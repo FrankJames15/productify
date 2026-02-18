@@ -4,6 +4,7 @@ import * as queries from '../db/queries.ts';
 import { getAuth } from "@clerk/express";
 
 export async function syncUser(req: Request, res: Response) {
+    console.log("syncUser is reached")
     try {
         const { userId } = getAuth(req)
         if(!userId) return res.status(401).json({error: "Unauthorized"});
