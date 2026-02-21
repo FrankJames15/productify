@@ -5,6 +5,11 @@ export const syncUser = async (userData) => {
     return data;
 };
 
+export const createProduct = async (payload) => {
+    const { data } = await api.post("/products", payload);
+    return data;
+};
+
 export const getAllProducts = async () => {
     const { data } = await api.get("/products");
     return data;
