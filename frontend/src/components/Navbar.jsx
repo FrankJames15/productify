@@ -10,6 +10,15 @@ import {
 import { ShoppingBagIcon, PlusIcon, UserIcon } from "lucide-react";
 import ThemeSelector from "./ThemeSelector";
 
+/**
+ * Top navigation bar displaying the brand, theme selector, and authentication-aware actions.
+ *
+ * Renders the site logo on the left and a set of controls on the right. When the user is signed in,
+ * it shows links for creating a product, viewing the profile, and a user menu; when not signed in,
+ * it shows Sign In and Get Started buttons that open Clerk modals.
+ *
+ * @returns {JSX.Element} The rendered navbar component.
+ */
 export default function Navbar() {
     const { isSignedIn } = useAuth();
     return (

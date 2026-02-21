@@ -21,6 +21,10 @@ const CreatePage = () => {
         imageUrl: "",
     });
 
+    /**
+     * Update the formData state for the field corresponding to the event target's name.
+     * @param {import('react').ChangeEvent<HTMLInputElement|HTMLTextAreaElement>} e - Change event from a form input or textarea; its target's name and value are used to update state.
+     */
     function handleFormDataChange(e) {
         setFormData((prev) => ({
             ...prev,
@@ -28,6 +32,13 @@ const CreatePage = () => {
         }));
     }
 
+    /**
+     * Handle form submission for creating a product.
+     *
+     * Prevents the browser's default submit behavior, triggers product creation with the current form data,
+     * and navigates to the root path ("/") if creation succeeds.
+     * @param {Event} e - The form submit event.
+     */
     async function handleSubmit(e) {
         e.preventDefault();
 

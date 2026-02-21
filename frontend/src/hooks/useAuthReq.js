@@ -2,6 +2,11 @@ import React, { useEffect } from "react";
 import api from "../lib/axios";
 import { useAuth } from "@clerk/clerk-react";
 
+/**
+ * Installs an Axios request interceptor that attaches the Clerk auth token as an Authorization header on outgoing requests when the user is signed in, and removes the interceptor on cleanup.
+ *
+ * @returns {{ isSignedIn: boolean, isClerkLoaded: boolean }} An object containing the current signed-in status (`isSignedIn`) and whether Clerk has finished loading (`isClerkLoaded`).
+ */
 export default function useAuthReq() {
     console.log("useAuthReq");
     const { getToken, isSignedIn, isLoaded } = useAuth();
