@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import {} from "@clerk/clerk-react";
-import { Route, Routes } from "react-router";
+import { Navigate, Route, Routes } from "react-router";
 
 // components
 import Navbar from "./components/Navbar";
@@ -27,9 +27,24 @@ export default function App() {
                 <Routes>
                     <Route path="/" element={<HomePage />} />
                     <Route path="/product" element={<ProductPage />} />
-                    <Route path="/profile" element={<ProfilePage />} />
-                    <Route path="/create" element={<CreatePage />} />
-                    <Route path="/edit/:id" element={<EditProductPage />} />
+                    <Route
+                        path="/profile"
+                        element={
+                            isSignedIn ? <CreatePage /> : <Navigate to="/" />
+                        }
+                    />
+                    <Route
+                        path="/create"
+                        element={
+                            isSignedIn ? <CreatePage /> : <Navigate to="/" />
+                        }
+                    />
+                    <Route
+                        path="/edit/:id"
+                        element={
+                            isSignedIn ? <CreatePage /> : <Navigate to="/" />
+                        }
+                    />
                 </Routes>
             </main>
         </div>

@@ -14,7 +14,9 @@ export default function useAuthReq() {
             }
             return config;
         });
-        return () => api.interceptors.request.eject(interceptor);
+        return () => {
+            api.interceptors.request.eject(interceptor);
+        };
     }, [isSignedIn, getToken]);
     return { isSignedIn, isClerkLoaded: isLoaded };
 }
