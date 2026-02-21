@@ -11,6 +11,13 @@ import { SignInButton } from "@clerk/clerk-react";
 import LoadingSpinner from "../components/LoadingSpinner";
 import ProductCard from "../components/ProductCard";
 
+/**
+ * Display the application's landing page with a hero and a products section.
+ *
+ * Shows a loading spinner while products are loading, an error alert if loading fails,
+ * and otherwise renders the hero banner plus either an empty-state card or a grid of products.
+ * @returns {JSX.Element} The rendered Home page element.
+ */
 function HomePage() {
     const { data: products, isLoading, error } = useProducts();
 

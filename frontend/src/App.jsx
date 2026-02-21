@@ -14,6 +14,13 @@ import EditProductPage from "./pages/EditProductPage";
 import useAuthReq from "./hooks/useAuthReq";
 import useUserSync from "./hooks/useUserSync";
 
+/**
+ * Root React component that renders the application layout and route definitions, with access control for protected routes.
+ *
+ * When the authentication library (Clerk) is not yet loaded the component renders nothing.
+ *
+ * @returns {JSX.Element|null} The app's rendered element containing the navbar and routes, or `null` if Clerk is not loaded.
+ */
 export default function App() {
     const { isClerkLoaded, isSignedIn } = useAuthReq();
     useUserSync();
