@@ -4,6 +4,7 @@ import * as queries from "../db/queries.ts";
 import { getAuth, requireAuth } from "@clerk/express";
 
 export async function addComment(req: Request, res: Response) {
+    console.log("addComment controller reached")
     try {
         const { userId } = getAuth(req);
         if (!userId) return res.status(401).json({ error: "Unauthorized" });
@@ -48,7 +49,8 @@ export async function deleteComment(req: Request, res: Response) {
         })
         
         await queries.deleteComment(commentId);
-        res.status(403).json({
+        
+        res.status(200).json({
             message: "Comment deleted successfully"
         })
     } catch (error) {

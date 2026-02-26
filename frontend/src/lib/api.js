@@ -36,12 +36,18 @@ export const deleteProduct = async (productId) => {
 };
 
 // comments api
-export const createComment = async ({ productId, content }) => {
+export async function getAllCommentsByProduct(productId) {
+    const { data } = await api.get(`/comments/${productId}`);
+    return data;
+}
+
+export async function createComment({ productId, content }) {
     const { data } = await api.post(`/comments/${productId}`, { content });
     return data;
-};
+}
 
-export const deleteComment = async ({ commentID }) => {
+// ❌
+export const deleteComment = async (commentID) => {
     const { data } = await api.delete(`/comments/${commentID}`);
     return data;
 };

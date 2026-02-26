@@ -22,7 +22,7 @@ app.use(express.urlencoded({ extended: true })); // parses form data (like HTML 
 // routes
 app.use("/api/users", usersRoutes);
 app.use("/api/products", productsRoutes);
-app.use("/api/comment", commentRoutes);
+app.use("/api/comments", commentRoutes);
 
 // run server
 app.listen(PORT, () =>
