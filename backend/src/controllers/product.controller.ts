@@ -90,7 +90,7 @@ export async function getProductById(req: Request, res: Response) {
 // @method: PATCH
 // @desc: update product
 // @access: PRIVATE
-export async function upateProduct(req: Request, res: Response) {
+export async function updateProduct(req: Request, res: Response) {
     try {
         const { userId } = getAuth(req);
         if (!userId) return res.status(401).json({ error: "Unauthorized" });

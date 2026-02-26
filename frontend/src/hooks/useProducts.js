@@ -34,7 +34,7 @@ export function useProduct(id) {
     });
 }
 
-export function useUpdateProduct(id) {
+export function useUpdateProduct() {
     const queryClient = useQueryClient();
 
     return useMutation({
