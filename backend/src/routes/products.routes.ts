@@ -16,6 +16,9 @@ router.get("/:id", productController.getProductById);
 // POST /api/products/ (private) - create/add new product
 router.post("/", requireAuth(), productController.addProduct);
 
+// PUT /api/products/:id (private) - update product
+router.put("/:id", requireAuth(), productController.updateProduct)
+
 // DELETE /api/products/:id (private) - delete product by ID
 router.delete("/:id", requireAuth(), productController.deleteProduct);
 
