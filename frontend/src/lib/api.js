@@ -25,8 +25,8 @@ export const getMyProducts = async () => {
     return data;
 };
 
-export const updateProduct = async ({ id, ...productData }) => {
-    const { data } = await api.put(`/products/${id}`, productData);
+export const updateProduct = async ({ id, updates }) => {
+    const { data } = await api.put(`/products/${id}`, updates);
     return data;
 };
 
